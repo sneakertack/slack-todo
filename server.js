@@ -1,4 +1,5 @@
 var http = require('http');
+var querystring = require('querystring');
 var Q = require('q');
 
 // App brains.
@@ -16,7 +17,8 @@ var server = http.createServer(function (request, response) {
       var body = '';
       request.on('data', function (chunk) {body += chunk;});
       request.on('end', function () {
-        var data = JSON.parse(body);
+        var data = querystring.parse(body);
+        console.log(data);
         reqInfoPrefix += data.command+' ';
         deferred.resolve(data);
       });
