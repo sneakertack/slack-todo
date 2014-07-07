@@ -1,0 +1,15 @@
+{
+  "name": "kid-haystakt",
+  "version": "0.0.1",
+  "description": "Support app that helps with Haystakt miscellany.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "haystakt",
+    "slack"
+  ],
+  "author": "Melvin Tiong",
+  "license": "ISC"
+}
