@@ -1,8 +1,12 @@
 {
   "name": "kid-haystakt",
-  "version": "0.0.1",
-  "description": "Support app that helps with Haystakt miscellany.",
+  "version": "0.1.0",
+  "description": "Support app that helps with Haystakt miscellany. The main thing is slack-todo, a todo mini-app for Slack.",
   "main": "server.js",
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/Sneakertack/slack-todo.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
