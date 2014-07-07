@@ -1,4 +1,4 @@
-Description: Todo functionality provided by Kid Haystakt.
+*Description: Todo functionality provided by Kid Haystakt.*
 
 /todo add <your task>
 /todo <your task>
