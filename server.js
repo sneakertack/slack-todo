@@ -1,4 +1,5 @@
 var http = require('http');
+var Q = require('q');
 
 // App brains.
 var slackSlash = require('./lib/slackSlash.js');
@@ -10,10 +11,31 @@ var server = http.createServer(function (request, response) {
   // Haystakt slash commands for Slack.
   // curl -d {} http://localhost:5000/slack/slash
   if (request.method === 'POST' && request.url === '/slack/slash') {
-    // Logic goes here.
-    response.writeHead(200);
-    response.end();
-    console.log(reqInfoPrefix+'Accepted.');
+    Q().then(function () {
+      var deferred = Q.defer();
+      var body = '';
+      request.on('data', function (chunk) {body += chunk;});
+      request.on('end', function () {
+        var data = JSON.parse(body);
+        reqInfoPrefix += data.command+' ';
+        deferred.resolve(data);
+      });
+      return deferred;
+    }).then(slackSlash).then(
+      // Final success.
+      function (data) {
+        response.writeHead(200, {'Content-Type': 'text/plain'});
+        response.end(data);
+        console.log(reqInfoPrefix+'served.');
+      },
+      // Final error handler.
+      function (err) {
+        response.writeHead(400);
+        response.end(err.message || err);
+        console.log(reqInfoPrefix+'Error: '+(err.message || err));
+      }
+    );
+    
   } else {
     response.writeHead(404);
     response.write('404: Nothing Here.\n');
