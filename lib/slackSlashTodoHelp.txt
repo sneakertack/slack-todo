@@ -1,0 +1,14 @@
+Description: Todo functionality provided by Kid Haystakt.
+
+/todo add <your task>
+/todo <your task>
+Adds a todo task under your name.
+
+/todo show
+/todo list
+/todo ls
+Lists outstanding todos. Will show EVERYONE's todos.
+
+/todo clear <id>
+/todo x <id>
+Clear todo with the corresponding id. Use /todo show to show IDs.

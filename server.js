@@ -18,11 +18,10 @@ var server = http.createServer(function (request, response) {
       request.on('data', function (chunk) {body += chunk;});
       request.on('end', function () {
         var data = querystring.parse(body);
-        console.log(data);
         reqInfoPrefix += data.command+' ';
         deferred.resolve(data);
       });
-      return deferred;
+      return deferred.promise;
     }).then(slackSlash).then(
       // Final success.
       function (data) {
