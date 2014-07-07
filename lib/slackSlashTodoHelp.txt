@@ -7,8 +7,9 @@ Adds a todo task under your name.
 /todo show
 /todo list
 /todo ls
+/todo
 Lists outstanding todos. Will show EVERYONE's todos.
 
 /todo clear <id>
 /todo x <id>
-Clear todo under your name with the corresponding number. Use '/todo show' to show IDs.
+Clear todo under your name with the corresponding number. Use '/todo' to show IDs.
