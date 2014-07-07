@@ -1,7 +1,9 @@
 var http = require('http');
 
-var port = process.argv[2];
+// App brains.
+var slackSlash = require('./lib/slackSlash.js');
 
+var port = process.argv[2];
 var server = http.createServer(function (request, response) {
   var reqInfoPrefix = request.method+' '+request.url+' : '; // For logging.
 
