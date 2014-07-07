@@ -1,3 +1,6 @@
+# Local app environment.
+.env
+
 # Logs
 logs
 *.log
