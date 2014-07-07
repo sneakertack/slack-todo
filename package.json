@@ -11,5 +11,10 @@
     "slack"
   ],
   "author": "Melvin Tiong",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "mongodb": "^1.4.7",
+    "q": "^1.0.1"
+  }
 }
