@@ -1,6 +1,6 @@
 {
   "name": "kid-haystakt",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Support app that helps with Haystakt miscellany. The main thing is slack-todo, a todo mini-app for Slack.",
   "main": "server.js",
   "repository" : {
